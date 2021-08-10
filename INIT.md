@@ -1,13 +1,11 @@
-
 # Initializing a clean Angular Material Project
 
-These are the commands and steps needed to scaffold a new Angular Material project from scratch,
-from an empty folder.
+These are the commands and steps needed to scaffold a new Angular Material project from scratch, from an empty folder.
 
 Please make sure to have the latest CLI, and at least NPM 5.
 
-When is doubt, its recommended to update to the latest version of node using a node versioning tool
-such as for example [nave](https://github.com/isaacs/nave) or [nvm-windows](https://github.com/coreybutler/nvm-windows).
+When is doubt, its recommended to update to the latest version of node using a node versioning tool such as for
+example [nave](https://github.com/isaacs/nave) or [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
 # Step 1 - Scaffold a clean project using the Angular CLI
 
