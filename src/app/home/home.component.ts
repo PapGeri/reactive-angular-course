@@ -17,6 +17,10 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.reloadCourses();
+	}
+
+	reloadCourses() {
 		const courses$: Observable<Course[]> = this.courseService.loadAllCourses()
 			.pipe(
 				map(courses => courses.sort(sortCoursesBySeqNo))
