@@ -6,15 +6,15 @@
 	<mat-form-field>
 
 		<input formControlName='description'
-		       matInput
-		       placeholder='Course Description'>
+			   matInput
+			   placeholder='Course Description'>
 
 	</mat-form-field>
 
 	<mat-form-field>
 
 		<mat-select formControlName='category'
-		            placeholder='Select category'>
+					placeholder='Select category'>
 
 			<mat-option value='BEGINNER'>
 				Beginner
@@ -33,10 +33,10 @@
 	<mat-form-field>
 
 		<input #searchInput [matDatepicker]='myDatepicker' formControlName='releasedAt'
-		       matInput>
+			   matInput>
 
 		<mat-datepicker-toggle [for]='myDatepicker'
-		                       matSuffix>
+							   matSuffix>
 
 		</mat-datepicker-toggle>
 
@@ -47,7 +47,7 @@
 	<mat-form-field>
 
         <textarea formControlName='longDescription' matInput
-                  placeholder='Description'>
+				  placeholder='Description'>
 
         </textarea>
 
@@ -59,7 +59,7 @@
 <mat-dialog-actions>
 
 	<button (click)='close()'
-	        class='mat-raised-button'>
+			class='mat-raised-button'>
 		Close
 	</button>
 

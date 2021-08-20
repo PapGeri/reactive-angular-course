@@ -6,22 +6,22 @@
 			<mat-form-field>
 
 				<input formControlName='email' matInput
-				       placeholder='Email'
-				       type='email'>
+					   placeholder='Email'
+					   type='email'>
 
 			</mat-form-field>
 
 			<mat-form-field>
 
 				<input formControlName='password' matInput
-				       placeholder='Password'
-				       type='password'>
+					   placeholder='Password'
+					   type='password'>
 
 			</mat-form-field>
 
 			<button (click)='login()' [disabled]='!form.valid'
-			        color='primary'
-			        mat-raised-button>Login
+					color='primary'
+					mat-raised-button>Login
 			</button>
 
 		</form>

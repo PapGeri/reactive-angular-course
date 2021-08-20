@@ -3,15 +3,15 @@
 	<mat-tab-group>
 		<mat-tab label='Beginners'>
 			<course-card-list
-				[courses]='beginnerCourses$ | async'
 				(coursesChanged)="reloadCourses()"
+				[courses]='beginnerCourses$ | async'
 			>
 			</course-card-list>
 		</mat-tab>
 		<mat-tab label='Advanced'>
 			<course-card-list
-				[courses]='advancedCourses$ | async'
 				(coursesChanged)="reloadCourses()"
+				[courses]='advancedCourses$ | async'
 			>
 			</course-card-list>
 		</mat-tab>
