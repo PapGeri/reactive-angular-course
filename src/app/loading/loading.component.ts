@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingService } from './loading.service';
 
 @Component({
 	selector: 'loading',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent implements OnInit {
-	constructor() {
+
+	constructor(public loadingService: LoadingService) {
 	}
 
 	ngOnInit() {
