@@ -7,18 +7,21 @@ export function searchLessons(req: Request, res: Response) {
 	const courseId = queryParams.courseId,
 		filter = queryParams.filter || '',
 		sortOrder = queryParams.sortOrder || 'asc',
-		pageNumber = parseInt(queryParams.pageNumber) || 0,
-		pageSize = parseInt(queryParams.pageSize) || 3;
+		pageNumber = parseInt(<string>queryParams.pageNumber, 0) || 0,
+		pageSize = parseInt(<string>queryParams.pageSize, 0) || 3;
 	let lessons;
 	if (courseId) {
-		lessons = Object.values(LESSONS).filter(lesson => lesson.courseId == courseId).sort((l1, l2) => l1.id - l2.id);
+		// @ts-ignore
+		lessons = Object.values(LESSONS).filter(lesson => lesson.courseId === courseId).sort((l1, l2) => l1.id - l2.id);
 	} else {
 		lessons = Object.values(LESSONS);
 	}
 	if (filter) {
-		lessons = lessons.filter(lesson => lesson.description.trim().toLowerCase().search(filter.toLowerCase()) >= 0);
+		if (typeof filter === 'string') {
+			lessons = lessons.filter(lesson => lesson.description.trim().toLowerCase().search(filter.toLowerCase()) >= 0);
+		}
 	}
-	if (sortOrder == 'desc') {
+	if (sortOrder === 'desc') {
 		lessons = lessons.reverse();
 	}
 	const initialPos = pageNumber * pageSize;
