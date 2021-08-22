@@ -7,12 +7,11 @@ export function searchLessons(req: Request, res: Response) {
 	const courseId = queryParams.courseId,
 		filter = queryParams.filter || '',
 		sortOrder = queryParams.sortOrder || 'asc',
-		pageNumber = parseInt(<string>queryParams.pageNumber, 0) || 0,
-		pageSize = parseInt(<string>queryParams.pageSize, 0) || 3;
+		pageNumber = parseInt(queryParams.pageNumber as string, 10) || 0,
+		pageSize = parseInt(queryParams.pageSize as string, 10) || 3;
 	let lessons;
 	if (courseId) {
-		// @ts-ignore
-		lessons = Object.values(LESSONS).filter(lesson => lesson.courseId === courseId).sort((l1, l2) => l1.id - l2.id);
+		lessons = Object.values(LESSONS).filter(lesson => lesson.courseId === parseInt(courseId as string, 10)).sort((l1, l2) => l1.id - l2.id);
 	} else {
 		lessons = Object.values(LESSONS);
 	}

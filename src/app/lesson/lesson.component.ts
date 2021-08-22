@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Lesson } from '../model/lesson';
 
 @Component({
 	selector: 'lesson',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
 	styleUrls: ['./lesson.component.css']
 })
 export class LessonComponent {
+
+	@Input()
+	lesson: Lesson;
+
 }
